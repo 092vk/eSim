@@ -1,8 +1,17 @@
 # module for handling updates 
 
+import json
+
 from dependency_checker import check_installed_version , check_ngspice_version, check_kicad_version
 
 from install_manager import install_kicad,install_dependencies_i, install_dependencies_n,install_verilator_dependencies,install_ngspice, install_ghdl
+
+# Function to load JSON data from a file
+def load_json(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+
 
 # Function to update the dependencies
 def update_dependencies(tool):
@@ -24,7 +33,16 @@ def update_kicad():
     """Update KiCad to the latest version."""
     print("Updating KiCad...")
     kiCadVersion = check_kicad_version()
-    if(kiCadVersion == None):
+
+    #extracting version from dependencies.json
+    json_data = load_json('toolManager/dependencies.json') 
+    Req_kicad_version = None
+    for tool in json_data["tools"]:
+        if tool["name"] == "KiCad":
+            kicad_version = tool["version"]
+            break
+
+    if(kiCadVersion != Req_kicad_version):
         install_kicad()
     else:
         print("KiCad is already up to date.")
@@ -34,7 +52,16 @@ def update_ngspice():
     """Update Ngspice to the latest version."""
     print("Updating Ngspice...")
     ngSpiceVersion = check_ngspice_version()
-    if(ngSpiceVersion == None):
+
+    #extracting version from dependencies.json
+    json_data = load_json('toolManager/dependencies.json') 
+    Req_ngSpice_version = None
+    for tool in json_data["tools"]:
+        if tool["name"] == "Ngspice":
+            Req_ngSpice_version = tool["version"]
+            break
+        
+    if(ngSpiceVersion == Req_ngSpice_version):
         install_ngspice()
     else:
         print("Ngspice is already up to date.")

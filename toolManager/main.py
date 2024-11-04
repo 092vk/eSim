@@ -67,7 +67,7 @@ def main():
             install_kicad()
             install_dependencies_i()
             install_dependencies_n()
-            # install_verilator_dependencies()
+            install_verilator_dependencies()
             install_ngspice()
             install_ghdl(ghdl, llvm_version)
 
