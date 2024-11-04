@@ -67,7 +67,7 @@ def main():
             install_kicad()
             install_dependencies_i()
             install_dependencies_n()
-            install_verilator_dependencies()
+            # install_verilator_dependencies()
             install_ngspice()
             install_ghdl(ghdl, llvm_version)
 
@@ -83,7 +83,8 @@ def main():
         
     elif(choice1 == "2"):
         print("Updating the tools...")
-        update_kicad()
+        print("This might not work as some tools have different commands to check version insted of simple -v or --version , also they give info other than version , which can cause problem on knowing their exact version , it needs more time  , it is put on do it later ")
+        # update_kicad()
         update_ngspice()
         update_verilator()
         update_ghdl(ghdl, llvm_version)

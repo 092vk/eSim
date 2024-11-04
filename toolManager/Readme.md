@@ -1,53 +1,57 @@
 # Tool Manager
 
-## The problem statement:
+## Overview
 
-1.Tool Installation Management 
+The Tool Manager is designed to automate the installation, updating, and management of essential tools and dependencies required for eSim. This manager ensures that required tools are compatible with the system environment, handles version control, and provides a user-friendly interface for monitoring installed tools and updates.
 
-->Download and Install required tools and dependencies automatically 
----->KiCad
----->NgSpice
----->others which are listed in the script
+## Problem Statement
 
-->Ensure compatibility with the system environment
-----> Linux
-----> Windows
+### 1. Tool Installation Management 
 
-->Handle Version control of the tools and dependencies 
+- **Automated Installation:** Download and install required tools and dependencies automatically, including:
+  - KiCad
+  - NgSpice
+  - Additional tools and dependencies listed in the configuration script
 
+- **System Compatibility:** Ensure compatibility with the operating system:
+  - Linux
+  - Windows
 
-2.Update and Upgrade system 
+- **Version Control:** Manage versions of tools and dependencies to maintain consistency.
 
-->Check for updates of the external tools and libraries
-->Functionality for the user to update these tools and dependencies
+### 2. Update and Upgrade System 
 
+- **Update Checks:** Check for updates of external tools and libraries.
+- **Upgrade Functionality:** Provide functionality for the user to update these tools and dependencies as needed.
 
-3.User Interface 
+### 3. User Interface 
 
--> Provide log of steps taken 
--> Provide GUI or Cli
--> Allow the user to see installed tools , versions and updates if available 
+- **Logging:** Provide logs of all actions taken by the Tool Manager.
+- **Interface Options:** Offer both CLI and GUI options for user interaction.
+- **Tool Management Overview:** Allow the user to view installed tools, their versions, and any available updates.
 
+## How the Tool Manager Works
 
-#How the Tool manager works:
+### Files/Modules and Their Responsibilities 
 
-## files/modules and their responsibility: 
+- **main.py**  
+  Responsible for coordinating all the modules.
 
-main.py ->  responsible for calling all the modules 
-dependencies.json ->    keeps tracks of all the dependencies and tools and the version currently in use in eSim
-dependencies_checker.py ->  module responsible for checking if the user has the dependency and if it has returns the version 
-install_manager.py ->   module responsible for installing the dependencies and tools
-update_manager.py ->    moduel responsible for checking and updating the dependencies 
+- **dependencies.json**  
+  Tracks all required dependencies and tools, along with their versions, for eSim.
 
+- **dependencies_checker.py**  
+  Checks if the required dependencies are already installed on the user’s system and retrieves their versions.
 
+- **install_manager.py**  
+  Handles the installation of tools and dependencies.
 
-## flow of module calling --->
+- **update_manager.py**  
+  Manages update checks and performs updates for tools and dependencies.
 
-main.py --> dependencies.json --> dependency_checker.py -> install_manager.py / update_manager.py
+### Module Call Flow 
 
+The Tool Manager operates in the following flow:
 
-# How tool Manager works :
-
-Tool manager has different modules each for different tasks as mentioned above in files/modules and their responsibilities , it includes instraller , update_manager , dependency_checker , config_manager and ui_manager
-
---> the main.py is the main file reponsible for calling all the modules 
+```plaintext
+main.py --> dependencies.json --> dependency_checker.py --> install_manager.py / update_manager.py
