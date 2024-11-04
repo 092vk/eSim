@@ -1,0 +1,23 @@
+ERROR:root:The dependencies.json file was not found.
+ERROR:root:dependencies.json file not found.
+ERROR:root:The dependencies.json file was not found.
+INFO:root:make installed successfully.
+INFO:root:gnat installed successfully.
+INFO:root:clang installed successfully.
+INFO:root:zlib1g-dev installed successfully.
+INFO:root:libcanberra-gtk-module installed successfully.
+INFO:root:libcanberra-gtk3-module installed successfully.
+INFO:root:libxaw7 installed successfully.
+INFO:root:libxaw7-dev installed successfully.
+ERROR:root:Failed to install llvm-9 llvm9-dev.
+ERROR:root:The dependencies.json file was not found.
+INFO:root:make installed successfully.
+INFO:root:gnat installed successfully.
+INFO:root:clang installed successfully.
+INFO:root:zlib1g-dev installed successfully.
+INFO:root:libcanberra-gtk-module installed successfully.
+INFO:root:libcanberra-gtk3-module installed successfully.
+INFO:root:libxaw7 installed successfully.
+INFO:root:libxaw7-dev installed successfully.
+ERROR:root:Failed to install llvm-9 llvm9-dev.
+INFO:root:Ngspice installed successfully.
