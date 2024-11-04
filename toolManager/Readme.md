@@ -1,6 +1,8 @@
-# 1.Tool Installation Management 
+# Tool Manager
 
 ## The problem statement:
+
+1.Tool Installation Management 
 
 ->Download and Install required tools and dependencies automatically 
 ---->KiCad
@@ -39,7 +41,13 @@ update_manager.py ->    moduel responsible for checking and updating the depende
 
 
 
-flow --->
+## flow of module calling --->
 
 main.py --> dependencies.json --> dependency_checker.py -> install_manager.py / update_manager.py
 
+
+# How tool Manager works :
+
+Tool manager has different modules each for different tasks as mentioned above in files/modules and their responsibilities , it includes instraller , update_manager , dependency_checker , config_manager and ui_manager
+
+--> the main.py is the main file reponsible for calling all the modules 
