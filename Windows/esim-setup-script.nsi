@@ -103,6 +103,22 @@ ${If} $0 != "admin" ;Require admin rights on NT4+
     SetErrorLevel 740 ;ERROR_ELEVATION_REQUIRED
     Quit
 ${EndIf}
+
+ ; Check if eSim is already installed
+  ReadRegStr $1 HKLM "Software\eSim" ""
+  StrCmp $1 "" NotInstalled Installed
+  NotInstalled:
+    ; No previous installation found
+    Goto done
+  Installed:
+    ; Previous installation found, ask user for removal
+    MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "A previous version of eSim is detected. Do you want to remove it before installing the new version?" IDYES +2
+    ; User chose to remove the old version
+    Push ""
+    Call un.onInit
+    Call un
+    Abort
+  done:
 FunctionEnd
   
 ;--------------------------------
