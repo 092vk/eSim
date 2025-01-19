@@ -1,0 +1,53 @@
+{
+  "tools": [
+    {
+      "name": "Ngspice",
+      "version": "36",
+      "url": {
+        "Linux": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/36/ngspice-36.tar.gz",
+        "Windows": "https://ngspice.sourceforge.io/ngspice-36_64-bit.exe"
+      }
+    },
+    {
+      "name": "KiCad",
+      "version": "6.0",
+      "url": {
+        "Linux": "ppa:kicad/kicad-6.0-releases",
+        "Windows": "https://kicad-downloads.s3.cern.ch/windows/stable/kicad-6.0.0-x86_64.exe"
+      }
+    }
+  ],
+  "dependencies": [
+    "make",
+    "gnat",
+    "clang",
+    "zlib1g-dev",
+    "libcanberra-gtk-module",
+    "libcanberra-gtk3-module",
+    "libxaw7",
+    "libxaw7-dev",
+    "llvm-9",
+    "llvm9-dev"
+  ],
+  "apt": [
+    "xterm",
+    "python3-psutil",
+    "python3-pyqt5",
+    "python3-matplotlib",
+    "python3-distutils"
+  ],
+  "pip": [
+    "watchdog",
+    "https://github.com/hdl/pyhdlparser/tarball/master",
+    "makerchip-app",
+    "sandpiper-saas",
+    "psutil",
+    "pyqt5",
+    "matplotlib"
+  ],
+  "choco": [
+    "python"
+  ],
+  "llvm": "9",
+  "ghdl": "ghdl-0.37"
+}
